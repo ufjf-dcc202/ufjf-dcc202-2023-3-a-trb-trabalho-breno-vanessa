@@ -1,13 +1,14 @@
-let dado, coluna;
+let dado, coluna, col1 = [], col2 = [], col3 = []
 
-function jogarDado(){
+function jogarDadoR(){
     dado = Math.floor(Math.random() * 6) + 1
-    return dado;
+    return dado
 }
 
-function escolherColuna(){
+function escolherColunaAleatoria(){
      coluna = Math.floor(Math.random() * 3) + 1
+     return coluna
 }
 
 
-export { jogarDado, escolherColuna }
+export { jogarDadoR, escolherColunaAleatoria }

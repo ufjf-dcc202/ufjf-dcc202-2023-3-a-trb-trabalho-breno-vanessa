@@ -1,3 +1,3 @@
-import { jogarDado, escolherColuna } from "./ratao"
+import { jogarDadoR, escolherColunaAleatoriaS } from "./ratao"
 
 
