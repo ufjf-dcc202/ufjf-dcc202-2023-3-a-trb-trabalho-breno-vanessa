@@ -2,12 +2,14 @@ main{
     display: flex;
     width: 100vw;
     height: 100vh;
+    background-image: url("../images/background.png");
+    background-size: 100% 100%;
 }
 
 .carneiro{
     width: 30%;
     height: 100%;
-    background-color: #000;
+    /* background-color: #000; */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -23,7 +25,7 @@ main{
 .ratao{
     width: 30%;
     height: 100%;
-    background-color: #000;
+    /* background-color: #000; */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -39,7 +41,7 @@ main{
 .tabuleiros{
     width: 40%;
     height: 100%;
-    background-color: #d3cdb9;
+    /* background-color: #d3cdb9; */
     display: flex;
     align-items: center;
     flex-direction: column;
