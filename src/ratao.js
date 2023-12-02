@@ -15,6 +15,8 @@ function colocaDadoNaColuna(){
         col1.push(dado)
     } else if(escolherColunaAleatoria() == 2 && col2.length < 3){
         col2.push(dado)
+    } else if(escolherColunaAleatoria() == 3 && col3.length < 3){
+        col3.push(dado)
     }
 }
 
