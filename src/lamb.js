@@ -1,4 +1,4 @@
-let dado, coluna;
+import { getLamb, jogarDado, colocaDadoNaColuna } from "./funcoesPadroes"
 
 
 

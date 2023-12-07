@@ -1,7 +1,3 @@
-let dado, coluna
+import { escolherColunaAleatoria, getRatao, jogarDado, colocaDadoNaColuna } from "./funcoesPadroes"
 
 
-
-
-
-export { jogarDadoR, escolherColunaAleatoria }
