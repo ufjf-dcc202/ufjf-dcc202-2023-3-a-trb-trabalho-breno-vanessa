@@ -1,24 +1,7 @@
-let dado, coluna, col1 = [], col2 = [], col3 = []
+let dado, coluna
 
-function jogarDadoR(){
-    dado = Math.floor(Math.random() * 6) + 1
-    return dado
-}
 
-function escolherColunaAleatoria(){
-     coluna = Math.floor(Math.random() * 3) + 1
-     return coluna
-}
 
-function colocaDadoNaColuna(){
-    if(escolherColunaAleatoria() == 1 && col1.length < 3){
-        col1.push(dado)
-    } else if(escolherColunaAleatoria() == 2 && col2.length < 3){
-        col2.push(dado)
-    } else if(escolherColunaAleatoria() == 3 && col3.length < 3){
-        col3.push(dado)
-    }
-}
 
 
 export { jogarDadoR, escolherColunaAleatoria }
