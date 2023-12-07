@@ -1,10 +1,14 @@
 // Criando um objeto para representar o Ratao
 let ratao = {
-    col1: [], col2: [], col3: []
+    col1: [], 
+    col2: [], 
+    col3: []
 } 
 // Criando um objeto para representar o Carneiro
 let lamb = {
-    col1: [], col2: [], col3: []
+    col1: [], 
+    col2: [], 
+    col3: []
 }
 
 // Criando os gets do ratao e do cordeiro
@@ -34,6 +38,9 @@ export function colocaDadoNaColuna(coluna, dado){
         col2.push(dado)
     } else if(coluna == 3 && ratao.col3.length < 3){
         col3.push(dado)
+    } else {
+        coluna = escolherColunaAleatoria()
+        colocaDadoNaColuna(coluna, dado)
     }
 }
 
