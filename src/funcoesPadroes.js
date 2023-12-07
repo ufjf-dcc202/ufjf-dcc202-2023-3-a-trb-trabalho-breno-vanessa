@@ -7,6 +7,14 @@ let lamb = {
     col1: [], col2: [], col3: []
 }
 
+// Criando os gets do ratao e do cordeiro
+export function getRatao(){
+    return structuredClone(ratao)
+}
+export function getLamb(){
+    return structuredClone(lamb)
+}
+
 export function jogarDado(){
     dado = Math.floor(Math.random() * 6) + 1
     return dado;
