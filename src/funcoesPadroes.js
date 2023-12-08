@@ -30,6 +30,17 @@ export function escolherColunaAleatoria(){
     return coluna
 }
 
+// função que vê se o adversário tem algum dado igual na mesma coluna
+export function confereColunaAdversaria(dado, colAdversaria){
+    for(let i = 0; i < colAdversaria.length; i++){
+        if(colAdversaria[i] == dado){
+            colAdversaria.splice(i, 1)
+        }
+    }
+
+    return colAdversaria
+}
+
 // Função de testar se podemos colocar na coluna
 export function colocaDadoNaColuna(coluna, dado){
     if(! acabouJogo()){
