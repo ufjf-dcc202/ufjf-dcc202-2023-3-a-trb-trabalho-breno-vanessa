@@ -50,21 +50,22 @@ main{
 
 
 .tabuleiro{
-    width: 60%;
-    height: 40%;
+    width: 55%;
+    height: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: red; */
 }
 
 .coluna{
     border: 2px solid black;
-    width: 90px;
+    width: 85px;
 }
 
 .coluna div{
-    border-bottom: 3px solid black;
-    height: 80px;
+    border-bottom: 2px solid black;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: center;
