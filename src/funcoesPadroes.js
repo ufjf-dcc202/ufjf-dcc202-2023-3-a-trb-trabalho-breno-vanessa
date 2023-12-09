@@ -1,14 +1,30 @@
 // Criando um objeto para representar o Ratao
 let ratao = {
-    col1: [], 
-    col2: [], 
-    col3: []
+    colunas: {
+        col1: [], 
+        col2: [], 
+        col3: []
+    },
+    pontuacoes: {
+        pont1: [],
+        pont2: [],
+        pont3: []
+    },
+    pontuacaoTotal: 0
 } 
 // Criando um objeto para representar o Carneiro
 let lamb = {
-    col1: [], 
-    col2: [], 
-    col3: []
+    colunas: {
+        col1: [], 
+        col2: [], 
+        col3: []
+    },
+    pontuacoes: {
+        pont1: [],
+        pont2: [],
+        pont3: []
+    },
+    pontuacaoTotal: 0
 }
 
 // Criando os gets do ratao e do cordeiro
@@ -19,6 +35,7 @@ export function getLamb(){
     return structuredClone(lamb)
 }
 
+// Função para jogar o dado (escolhe aleatoriamente de 1 a 6)
 export function jogarDado(){
     dado = Math.floor(Math.random() * 6) + 1
     return dado;
@@ -30,6 +47,8 @@ export function escolherColunaAleatoria(){
     return coluna
 }
 
+//função para calcular a pontuação de cada coluna 
+
 // função que vê se o adversário tem algum dado igual na mesma coluna
 export function confereColunaAdversaria(dado, colAdversaria){
     for(let i = 0; i < colAdversaria.length; i++){
@@ -39,6 +58,10 @@ export function confereColunaAdversaria(dado, colAdversaria){
     }
 
     return colAdversaria
+}
+
+export function atualizaPontuacao(){
+
 }
 
 // Função de testar se podemos colocar na coluna
