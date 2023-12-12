@@ -24,7 +24,8 @@ main{
 }
 
 .sorteadorC{
-    border: 1px solid yellow;
+    position: relative;
+    /* border: 1px solid yellow; */
     width: 100%;
     display: flex;
     margin-bottom: 10vh;
@@ -34,7 +35,13 @@ main{
 }
 
 .sorteadorC p {
-    font-size: 20px;
+    position: absolute;
+    font-size: 60px;
+    color: red;
+    text-shadow: rgb(152, 23, 23) 3px 2px 3px;
+    font-weight: 900;
+    top: 25%;
+    left: 46%;
 }
 
 .sorteadorC img{
@@ -56,26 +63,32 @@ main{
 
 .ratao img{
     height: 35%;
-    margin: 4vh;
+    margin-bottom: 4vh;
 }
 
 .sorteadorR{
-    border: 1px solid yellow;
+    position: relative;
+    /* border: 1px solid yellow; */
     width: 100%;
     display: flex;
-    margin-top: 10vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .sorteadorR p {
-    font-size: 20px;
+    position: absolute;
+    font-size: 60px;
+    color: red;
+    text-shadow: rgb(152, 23, 23) 3px 2px 3px;
+    font-weight: 900;
+    top: 15%;
+    left: 46%;
 }
 
 .sorteadorR img{
     width: 60%;
-    height: auto;
+    height: fit-content;
 }
 
 .tabuleiros{
