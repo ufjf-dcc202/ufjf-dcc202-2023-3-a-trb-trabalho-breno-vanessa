@@ -1,4 +1,4 @@
-import { getLamb, jogarDado, colocaDadoNaColuna } from "./funcoesPadroes"
+import { getLamb, jogarDado, colocaDadoNaColuna, atualizaPontuacao } from "./funcoesPadroes"
 
 let dado, coluna, pontuacao
 

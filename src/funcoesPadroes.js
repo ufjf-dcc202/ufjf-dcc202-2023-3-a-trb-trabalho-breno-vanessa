@@ -41,12 +41,6 @@ export function jogarDado(){
     return dado;
 }
 
-// Função de escolher coluna aleatoriamente do Ratao
-export function escolherColunaAleatoria(){
-    coluna = Math.floor(Math.random() * 3) + 1
-    return coluna
-}
-
 //função para calcular a pontuação de cada coluna 
 
 // função que vê se o adversário tem algum dado igual na mesma coluna
