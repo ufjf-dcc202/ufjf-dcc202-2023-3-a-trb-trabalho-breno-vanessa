@@ -6,5 +6,8 @@ import { getRatao,
     colocaDadoNaColuna,
     acabouJogo,
     finalizaJogo} 
-    from "./funcoesPadroes.js"
+from "./funcoesPadroes.js"
 
+import { escolheColuna } from "./lamb.js"
+
+import { escolheColunaAleatoria } from "./ratao.js"
