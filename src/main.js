@@ -46,12 +46,17 @@ const sortC = document.querySelector("#sorteadorC")
 const ptR = document.querySelector("#pontuacaoR")
 const ptC = document.querySelector("#pontuacaoC")
 
+// Esse loop roda enquanto o jogo não tiver acabado
 while(!acabouJogo()){
-    let dado = jogarDado()
+    let dado = jogarDado() // A cada nova jogada (cada rodada do loop), o dado é jogado
+
+    // O if testa de quem é a vez
     if(vez == 0){
 
     } else {
 
     }
+
+    // Esse operador ternário muda o jogador
     vez == 1 ? vez = 0 : vez = 1
 }
