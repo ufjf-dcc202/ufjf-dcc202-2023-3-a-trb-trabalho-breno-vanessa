@@ -41,8 +41,6 @@ export function jogarDado(){
     return dado;
 }
 
-//função para calcular a pontuação de cada coluna 
-
 // função que vê se o adversário tem algum dado igual na mesma coluna
 export function confereColunaAdversaria(dado, colAdversaria){
     for(let i = 0; i < colAdversaria.length; i++){
@@ -54,6 +52,7 @@ export function confereColunaAdversaria(dado, colAdversaria){
     return colAdversaria
 }
 
+//função para calcular a pontuação de cada coluna 
 export function atualizaPontuacaoColunas(col){
     pont = 0
     
