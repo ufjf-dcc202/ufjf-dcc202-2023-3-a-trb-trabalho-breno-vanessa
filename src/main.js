@@ -41,3 +41,5 @@ const col3R = document.querySelector("#col3R")
 const sortR = document.querySelector("#sorteadorR")
 const sortC = document.querySelector("#sorteadorC")
 
+const ptR = document.querySelector("#pontuacaoR")
+const ptC = document.querySelector("#pontuacaoC")
