@@ -1,16 +1,17 @@
-import { getRatao, 
-    getLamb, 
-    jogarDado,  
-    confereColunaAdversaria,
-    atualizaPontuacao,
-    colocaDadoNaColuna,
-    acabouJogo,
-    finalizaJogo} 
-from "./funcoesPadroes.js"
+import {
+  getRatao,
+  getLamb,
+  jogarDado,
+  confereColunaAdversaria,
+  atualizaPontuacao,
+  colocaDadoNaColuna,
+  acabouJogo,
+  finalizaJogo,
+} from "./funcoesPadroes.js";
 
-import { escolheColuna } from "./lamb.js"
+import { escolheColuna } from "./lamb.js";
 
-import { escolheColunaAleatoria } from "./ratao.js"
+import { escolheColunaAleatoria } from "./ratao.js";
 
 // const col10c = document.querySelector("#col10c")
 // const col11c = document.querySelector("#col11c")
@@ -31,32 +32,36 @@ import { escolheColunaAleatoria } from "./ratao.js"
 // const col31r = document.querySelector("#col31r")
 // const col32r = document.querySelector("#col32r")
 
-let vez = 0 // 0 para Carneiro e 1 para Ratao
+let vez = 0; // 0 para Carneiro e 1 para Ratao
 
-const col1C = document.querySelector("#col1C")
-const col2C = document.querySelector("#col2C")
-const col3C = document.querySelector("#col3C")
-const col1R = document.querySelector("#col1R")
-const col2R = document.querySelector("#col2R")
-const col3R = document.querySelector("#col3R")
+const col1C = document.querySelector("#col1C");
+const col2C = document.querySelector("#col2C");
+const col3C = document.querySelector("#col3C");
+const col1R = document.querySelector("#col1R");
+const col2R = document.querySelector("#col2R");
+const col3R = document.querySelector("#col3R");
 
-const sortR = document.querySelector("#sorteadorR")
-const sortC = document.querySelector("#sorteadorC")
+const sortR = document.querySelector("#sorteadorR");
+const sortC = document.querySelector("#sorteadorC");
 
-const ptR = document.querySelector("#pontuacaoR")
-const ptC = document.querySelector("#pontuacaoC")
+const ptR = document.querySelector("#pontuacaoR");
+const ptC = document.querySelector("#pontuacaoC");
 
-// Esse loop roda enquanto o jogo não tiver acabado
-while(!acabouJogo()){
-    let dado = jogarDado() // A cada nova jogada (cada rodada do loop), o dado é jogado
+
+
+function jogo() {
+  // Esse loop roda enquanto o jogo não tiver acabado
+  while (!acabouJogo()) {
+    let dado = jogarDado(); // A cada nova jogada (cada rodada do loop), o dado é jogado
 
     // O if testa de quem é a vez
-    if(vez == 0){
-
+    if (vez == 0) {
+      sortC.innerHTML = dado;
     } else {
-
+      sortR.innerHTML = dado;
     }
 
     // Esse operador ternário muda o jogador
-    vez == 1 ? vez = 0 : vez = 1
+    vez == 1 ? (vez = 0) : (vez = 1);
+  }
 }
