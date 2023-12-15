@@ -30,3 +30,14 @@ import { escolheColunaAleatoria } from "./ratao.js"
 // const col30r = document.querySelector("#col30r")
 // const col31r = document.querySelector("#col31r")
 // const col32r = document.querySelector("#col32r")
+
+const col1C = document.querySelector("#col1C")
+const col2C = document.querySelector("#col2C")
+const col3C = document.querySelector("#col3C")
+const col1R = document.querySelector("#col1R")
+const col2R = document.querySelector("#col2R")
+const col3R = document.querySelector("#col3R")
+
+const sortR = document.querySelector("#sorteadorR")
+const sortC = document.querySelector("#sorteadorC")
+
