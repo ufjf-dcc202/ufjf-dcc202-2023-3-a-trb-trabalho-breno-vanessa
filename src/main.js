@@ -48,4 +48,10 @@ const ptC = document.querySelector("#pontuacaoC")
 
 while(!acabouJogo()){
     let dado = jogarDado()
+    if(vez == 0){
+
+    } else {
+
+    }
+    vez == 1 ? vez = 0 : vez = 1
 }
