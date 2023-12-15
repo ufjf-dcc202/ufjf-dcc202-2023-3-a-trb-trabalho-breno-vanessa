@@ -60,7 +60,14 @@ function jogo() {
     // O if testa de quem é a vez
     if (vez == 0) {
       sortC.innerHTML = `${dado}`;
-      escolheColuna();
+      coluna = escolheColuna();
+      if (coluna == 1) {
+        col1C.innerHTML += `<span> ${dado} </span>`;
+      } else if (coluna == 2) {
+        col2C.innerHTML += `<span> ${dado} </span>`;
+      } else if (coluna == 3) {
+        col3C.innerHTML += `<span> ${dado} </span>`;
+      }
     } else {
       sortR.innerHTML = `${dado}`;
       coluna = escolheColunaAleatoria();
