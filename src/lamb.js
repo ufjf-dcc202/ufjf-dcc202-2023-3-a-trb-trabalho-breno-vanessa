@@ -1,9 +1,12 @@
-import { getLamb, jogarDado, colocaDadoNaColuna, atualizaPontuacao } from "./funcoesPadroes"
+import {
+  getLamb,
+  jogarDado,
+  colocaDadoNaColuna,
+  atualizaPontuacao,
+} from "./funcoesPadroes";
 
-let lamb
+let lamb;
 
-lamb = getLamb()
+lamb = getLamb();
 
-function escolheColuna(dado, col){
-    
-}
+function escolheColuna(dado, col) {}
