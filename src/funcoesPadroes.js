@@ -54,8 +54,14 @@ export function confereColunaAdversaria(dado, colAdversaria){
     return colAdversaria
 }
 
-export function atualizaPontuacao(){
+export function atualizaPontuacaoColunas(col){
+    pont = 0
+    
+    for(let i = 0; i < col.length; i++){
+        pont+= col[i]
+    }
 
+    return pont
 }
 
 // Função de testar se podemos colocar na coluna
