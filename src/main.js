@@ -31,6 +31,8 @@ import { escolheColunaAleatoria } from "./ratao.js"
 // const col31r = document.querySelector("#col31r")
 // const col32r = document.querySelector("#col32r")
 
+let vez = 0 // 0 para Carneiro e 1 para Ratao
+
 const col1C = document.querySelector("#col1C")
 const col2C = document.querySelector("#col2C")
 const col3C = document.querySelector("#col3C")
@@ -43,3 +45,7 @@ const sortC = document.querySelector("#sorteadorC")
 
 const ptR = document.querySelector("#pontuacaoR")
 const ptC = document.querySelector("#pontuacaoC")
+
+while(!acabouJogo()){
+    let dado = jogarDado()
+}
