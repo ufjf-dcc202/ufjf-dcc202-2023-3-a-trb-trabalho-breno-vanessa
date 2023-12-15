@@ -1,6 +1,8 @@
 import { getRatao, jogarDado, colocaDadoNaColuna, atualizaPontuacao } from "./funcoesPadroes"
 
-let dado, coluna, pontuacao
+let ratao, coluna
+
+ratao = getRatao()
 
 // Função de escolher coluna aleatoriamente do Ratao
 export function escolheColunaAleatoria(){

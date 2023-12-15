@@ -1,7 +1,9 @@
 import { getLamb, jogarDado, colocaDadoNaColuna, atualizaPontuacao } from "./funcoesPadroes"
 
-let dado, coluna, pontuacao
+let lamb
 
-function escolheColuna(){
+lamb = getLamb()
+
+function escolheColuna(dado, col){
     
 }
