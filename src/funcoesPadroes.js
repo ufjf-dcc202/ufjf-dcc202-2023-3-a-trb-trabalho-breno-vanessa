@@ -1,3 +1,7 @@
+import { escolheColuna } from "./lamb.js";
+
+import { escolheColunaAleatoria } from "./ratao.js";
+
 // Criando um objeto para representar o Ratao
 let ratao = {
   colunas: {
@@ -64,20 +68,29 @@ export function atualizaPontuacaoColunas(col) {
 }
 
 // Função de testar se podemos colocar na coluna
-export function colocaDadoNaColuna(coluna, dado) {
-  if (!acabouJogo()) {
-    if (coluna == 1 && ratao.col1.length < 3) {
-      col1.push(dado);
-    } else if (coluna == 2 && ratao.col2.length < 3) {
-      col2.push(dado);
-    } else if (coluna == 3 && ratao.col3.length < 3) {
-      col3.push(dado);
+export function colocaDadoNaColuna(coluna, dado, jogador) {
+  if (jogador == 0) {
+    if (coluna == 1 && lamb.col1.length < 3) {
+      lamb.col1.push(dado);
+    } else if (coluna == 2 && lamb.col2.length < 3) {
+      lamb.col2.push(dado);
+    } else if (coluna == 3 && lamb.col3.length < 3) {
+      lamb.col3.push(dado);
     } else {
-      coluna = escolherColunaAleatoria();
-      colocaDadoNaColuna(coluna, dado);
+      escolheColuna();
+      colocaDadoNaColuna(coluna, dado, jogador);
     }
   } else {
-    finalizaJogo(calculaPontuacao);
+    if (coluna == 1 && ratao.col1.length < 3) {
+      ratao.col1.push(dado);
+    } else if (coluna == 2 && ratao.col2.length < 3) {
+      ratao.col2.push(dado);
+    } else if (coluna == 3 && ratao.col3.length < 3) {
+      ratao.col3.push(dado);
+    } else {
+      coluna = escolherColunaAleatoria();
+      colocaDadoNaColuna(coluna, dado, jogador);
+    }
   }
 }
 
