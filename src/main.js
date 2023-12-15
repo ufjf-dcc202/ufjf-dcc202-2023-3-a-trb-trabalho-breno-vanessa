@@ -47,9 +47,12 @@ const sortC = document.querySelector("#sorteadorC");
 const ptR = document.querySelector("#pontuacaoR");
 const ptC = document.querySelector("#pontuacaoC");
 
+const mensage = document.querySelector("#inicio");
 
+mensage.addEventListener("click", jogo);
 
 function jogo() {
+  mensage.innerHTML = "";
   // Esse loop roda enquanto o jogo não tiver acabado
   while (!acabouJogo()) {
     let dado = jogarDado(); // A cada nova jogada (cada rodada do loop), o dado é jogado
