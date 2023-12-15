@@ -59,9 +59,18 @@ function jogo() {
 
     // O if testa de quem é a vez
     if (vez == 0) {
-      sortC.innerHTML = dado;
+      sortC.innerHTML = `${dado}`;
     } else {
-      sortR.innerHTML = dado;
+      sortR.innerHTML = `${dado}`;
+      coluna = escolheColunaAleatoria();
+      colocaDadoNaColuna(coluna, dado, jogador);
+      if(coluna == 1){
+        col1R.innerHTML += `<span> ${dado} </span>`
+      } else if(coluna == 2){
+        col2R.innerHTML += `<span> ${dado} </span>`
+      } else if(coluna == 3){
+        col3R.innerHTML += `<span> ${dado} </span>`
+      }
     }
 
     // Esse operador ternário muda o jogador
