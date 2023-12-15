@@ -124,3 +124,28 @@ main{
     align-items: center;
     justify-content: center;
 }
+
+.pontuacoes{
+    display: flex;
+    border: 1px solid red;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.inicio-fim{
+    border: 1px solid gray;
+    font-weight: 800;
+    font-size: 30px;
+    width: 30%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px gray;
+}
+
+.inicio-fim:hover{
+    box-shadow: 4px 4px gray;
+    cursor: pointer;
+}
