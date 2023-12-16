@@ -1,13 +1,28 @@
 import {
-  getRatao,
   jogarDado,
   colocaDadoNaColuna,
   atualizaPontuacao,
-} from "./funcoesPadroes";
+} from "./funcoesPadroes.js";
 
 let ratao, coluna;
 
-ratao = getRatao();
+ratao = {
+  colunas: {
+    col1: [],
+    col2: [],
+    col3: [],
+  },
+  pontuacoes: {
+    pont1: [],
+    pont2: [],
+    pont3: [],
+  },
+  pontuacaoTotal: 0,
+};
+
+export function getRatao() {
+  return structuredClone(ratao);
+}
 
 // Função de escolher coluna aleatoriamente do Ratao
 export function escolheColunaAleatoria() {

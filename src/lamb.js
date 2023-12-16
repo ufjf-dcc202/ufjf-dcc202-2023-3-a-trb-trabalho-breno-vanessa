@@ -1,12 +1,25 @@
 import {
-  getLamb,
   jogarDado,
   colocaDadoNaColuna,
   atualizaPontuacao,
-} from "./funcoesPadroes";
+} from "./funcoesPadroes.js";
 
-let lamb;
+let lamb = {
+  colunas: {
+    col1: [],
+    col2: [],
+    col3: [],
+  },
+  pontuacoes: {
+    pont1: [],
+    pont2: [],
+    pont3: [],
+  },
+  pontuacaoTotal: 0,
+};
 
-lamb = getLamb();
+export function getLamb() {
+  return structuredClone(lamb);
+}
 
-function escolheColuna(dado, col) {}
+export function escolheColuna(dado, col) {}

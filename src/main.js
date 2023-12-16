@@ -1,6 +1,4 @@
 import {
-  getRatao,
-  getLamb,
   jogarDado,
   confereColunaAdversaria,
   atualizaPontuacao,
@@ -9,9 +7,9 @@ import {
   finalizaJogo,
 } from "./funcoesPadroes.js";
 
-import { escolheColuna } from "./lamb.js";
+import { getLamb, escolheColuna } from "./lamb.js";
 
-import { escolheColunaAleatoria } from "./ratao.js";
+import { getRatao, escolheColunaAleatoria } from "./ratao.js";
 
 // const col10c = document.querySelector("#col10c")
 // const col11c = document.querySelector("#col11c")
@@ -51,7 +49,10 @@ const mensage = document.querySelector("#inicio");
 
 mensage.addEventListener("click", jogo);
 
+let coluna;
+
 function jogo() {
+  console.log("Essa porra tá funcionando");
   mensage.innerHTML = "";
   // Esse loop roda enquanto o jogo não tiver acabado
   while (!acabouJogo()) {
@@ -59,7 +60,7 @@ function jogo() {
 
     // O if testa de quem é a vez
     if (vez == 0) {
-      sortC.innerHTML = `${dado}`;
+      sortC.innerHTML = dado;
       coluna = escolheColuna();
       if (coluna == 1) {
         col1C.innerHTML += `<span> ${dado} </span>`;
@@ -69,9 +70,9 @@ function jogo() {
         col3C.innerHTML += `<span> ${dado} </span>`;
       }
     } else {
-      sortR.innerHTML = `${dado}`;
+      sortR.innerHTML = dado;
       coluna = escolheColunaAleatoria();
-      colocaDadoNaColuna(coluna, dado, jogador);
+      colocaDadoNaColuna(coluna, dado, vez);
       if (coluna == 1) {
         col1R.innerHTML += `<span> ${dado} </span>`;
       } else if (coluna == 2) {
