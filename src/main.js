@@ -30,6 +30,8 @@ import { getRatao, escolheColunaAleatoria } from "./ratao.js";
 // const col31r = document.querySelector("#col31r")
 // const col32r = document.querySelector("#col32r")
 
+let cordeiro = getLamb();
+let rato = getRatao();
 let vez = 0; // 0 para Carneiro e 1 para Ratao
 
 const col1C = document.querySelector("#col1C");
@@ -72,13 +74,20 @@ function jogo() {
     } else {
       sortR.innerHTML = dado;
       coluna = escolheColunaAleatoria();
-      colocaDadoNaColuna(coluna, dado, vez);
-      if (coluna == 1) {
-        col1R.innerHTML += `<span> ${dado} </span>`;
-      } else if (coluna == 2) {
-        col2R.innerHTML += `<span> ${dado} </span>`;
-      } else if (coluna == 3) {
-        col3R.innerHTML += `<span> ${dado} </span>`;
+      let aux = colocaDadoNaColuna(coluna, dado, vez);
+      coluna = aux;
+
+      col1R.innerHTML = "";
+      col2R.innerHTML = "";
+      col3R.innerHTML = "";
+      for (let i = 0; i < rato.colunas.col1.length; i++) {
+        col1R.innerHTML += `<span> ${rato.colunas.col1[i]} </span>`;
+      }
+      for (let i = 0; i < rato.colunas.col2.length; i++) {
+        col2R.innerHTML += `<span> ${rato.colunas.col2[i]} </span>`;
+      }
+      for (let i = 0; i < rato.colunas.col3.length; i++) {
+        col3R.innerHTML += `<span> ${rato.colunas.col3[i]} </span>`;
       }
     }
 

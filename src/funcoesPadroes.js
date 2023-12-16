@@ -57,14 +57,19 @@ export function colocaDadoNaColuna(coluna, dado, jogador) {
       coluna = escolheColunaAleatoria();
       colocaDadoNaColuna(coluna, dado, jogador);
     }
+    return coluna;
   }
 }
 
 // função que diz se o jogo acabou
 export function acabouJogo() {
   if (
-    (lamb.colunas.col1.length == 3 && lamb.colunas.col2.length == 3 && lamb.colunas.col3.length == 3) ||
-    (ratao.colunas.col1.length == 3 && ratao.colunas.col2.length == 3 && ratao.colunas.col3.length == 3)
+    (lamb.colunas.col1.length == 3 &&
+      lamb.colunas.col2.length == 3 &&
+      lamb.colunas.col3.length == 3) ||
+    (ratao.colunas.col1.length == 3 &&
+      ratao.colunas.col2.length == 3 &&
+      ratao.colunas.col3.length == 3)
   ) {
     return true;
   } else {

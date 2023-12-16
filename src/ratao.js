@@ -21,8 +21,10 @@ ratao = {
 };
 
 export function getRatao() {
-  return structuredClone(ratao);
+  return ratao;
 }
+
+//export function setRatao()
 
 // Função de escolher coluna aleatoriamente do Ratao
 export function escolheColunaAleatoria() {

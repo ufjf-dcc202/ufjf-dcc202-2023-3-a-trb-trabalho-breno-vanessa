@@ -22,4 +22,5 @@ export function getLamb() {
   return structuredClone(lamb);
 }
 
+
 export function escolheColuna(dado, col) {}
