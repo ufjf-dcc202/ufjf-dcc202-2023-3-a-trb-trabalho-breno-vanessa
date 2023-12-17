@@ -94,4 +94,5 @@ function inimigo() {
 // atualizar coluna
 // atualiza pontuacao coluna e geral
 // confere a coluna adversaria
+  // vamos ter que fazer if pra ver qual coluna adversária avaliar
 // muda jogador
