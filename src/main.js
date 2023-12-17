@@ -95,30 +95,3 @@ function inimigo() {
 // atualiza pontuacao coluna e geral
 // confere a coluna adversaria
 // muda jogador
-
-// function jogo() {
-//   // Esse loop roda enquanto o jogo não tiver acabado
-//   //while (!acabouJogo()) {
-
-//   // O if testa de quem é a vez
-//     coluna = escolheColunaAleatoria();
-//     let aux = colocaDadoNaColuna(coluna, dado, vez);
-//     coluna = aux;
-
-//     col1R.innerHTML = "";
-//     col2R.innerHTML = "";
-//     col3R.innerHTML = "";
-//     for (let i = 0; i < rato.colunas.col1.length; i++) {
-//       col1R.innerHTML += `<span> ${rato.colunas.col1[i]} </span>`;
-//     }
-//     for (let i = 0; i < rato.colunas.col2.length; i++) {
-//       col2R.innerHTML += `<span> ${rato.colunas.col2[i]} </span>`;
-//     }
-//     for (let i = 0; i < rato.colunas.col3.length; i++) {
-//       col3R.innerHTML += `<span> ${rato.colunas.col3[i]} </span>`;
-//     }
-
-//   // Esse operador ternário muda o jogador
-//   vez == 1 ? (vez = 0) : (vez = 1);
-//   //}
-// }
