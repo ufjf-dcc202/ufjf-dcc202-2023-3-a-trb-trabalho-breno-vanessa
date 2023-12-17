@@ -1,4 +1,4 @@
-import { escolheColuna, getLamb } from "./lamb.js";
+import { getLamb } from "./lamb.js";
 
 import { escolheColunaAleatoria, getRatao } from "./ratao.js";
 
@@ -23,7 +23,7 @@ export function confereColunaAdversaria(dado, colAdversaria) {
 }
 
 //função para calcular a pontuação de cada coluna
-export function atualizaPontuacao(col) {
+export function atualizaPontuacaoColuna(col) {
   pont = 0;
 
   for (let i = 0; i < col.length; i++) {
@@ -38,13 +38,15 @@ export function colocaDadoNaColuna(coluna, dado, jogador) {
   if (jogador == 0) {
     if (coluna == 1 && lamb.colunas.col1.length < 3) {
       lamb.colunas.col1.push(dado);
+      return true;
     } else if (coluna == 2 && lamb.colunas.col2.length < 3) {
       lamb.colunas.col2.push(dado);
+      return true;
     } else if (coluna == 3 && lamb.colunas.col3.length < 3) {
       lamb.colunas.col3.push(dado);
+      return true;
     } else {
-      escolheColuna();
-      colocaDadoNaColuna(coluna, dado, jogador);
+      return false;
     }
   } else {
     if (coluna == 1 && ratao.colunas.col1.length < 3) {
