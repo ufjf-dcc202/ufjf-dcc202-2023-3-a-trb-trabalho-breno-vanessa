@@ -14,6 +14,7 @@ import { getRatao, escolheColunaAleatoria, atualizaColunaR } from "./ratao.js";
 let cordeiro = getLamb();
 let rato = getRatao();
 let vez = 0; // 0 para Carneiro e 1 para Ratao
+let jogocomecou = false;
 
 const col1C = document.querySelector("#col1C");
 const col2C = document.querySelector("#col2C");
@@ -31,7 +32,7 @@ const ptC = document.querySelector("#pontuacaoC");
 
 export function atualizaPontuacaoGeral(){
   let caminho = cordeiro.pontuacoes
-  cordeiro.pontuacaoTotal = caminho.col1 + caminho.col2 + caminho.col3
+  cordeiro.pontuacaoTotal = caminho.pont1 + caminho.pont2 + caminho.pont3
   ptC.innerHTML = cordeiro.pontuacaoTotal
 
   let caminhoR = rato.pontuacoes
@@ -47,6 +48,7 @@ let coluna;
 mensage.addEventListener("click", () => rolarDado(sortC));
 
 function rolarDado(sorteador) {
+  jogocomecou = true;
   console.log("Essa porra tá funcionando");
   dadoC = jogarDado();
   sorteador.innerHTML = dadoC;
@@ -58,16 +60,19 @@ col2C.addEventListener("click", () => jogador(2));
 col3C.addEventListener("click", () => jogador(3));
 
 function jogador(coluna) {
+  if (!jogocomecou) return;
   colocaDadoNaColuna(coluna, dadoC, 0);
   atualizaColunaC();
   atualizaPontuacaoColuna(coluna, 0);
   atualizaPontoColunaC(coluna);
   atualizaPontuacaoGeral();
+  inimigo();
 }
 
 function inimigo() {
   dadoR = jogarDado();
   colocaDadoNaColuna(coluna, dadoC, 1);
+  //FIXME:atualizar o tabuleiro do inimigo
 }
 
 // jogar o dado
