@@ -81,7 +81,7 @@ function jogador(coluna) {
   atualizaColunaC();
   atualizaPontuacaoColuna(coluna, 0);
   atualizaPontoColunaC(coluna);
-  console.log(cordeiro.pontuacoes.col2);
+  atualizaPontuacaoGeral();
 }
 
 function inimigo() {
