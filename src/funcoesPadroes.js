@@ -23,14 +23,60 @@ export function confereColunaAdversaria(dado, colAdversaria) {
 }
 
 //função para calcular a pontuação de cada coluna
-export function atualizaPontuacaoColuna(col) {
-  pont = 0;
+export function atualizaPontuacaoColuna(col, vez) {
+  let pontuacao = 0;
 
-  for (let i = 0; i < col.length; i++) {
-    pont += col[i];
+  let jogador;
+  if (vez == 0) {
+    jogador = lamb.colunas;
+  } else {
+    jogador = ratao.colunas;
   }
+  switch (col) {
+    case 1:
+      for (let i = 0; i < jogador.col1.length; i++) {
+        let vezes = auxAtualizaPontuacaoColuna(jogador.col1[i], jogador.col1);
+        pontuacao += jogador.col1[i] * vezes;
+      }
+      if (vez == 0) {
+        lamb.pontuacoes.col1 = pontuacao;
+      } else {
+        ratao.pontuacoes.col1 = pontuacao;
+      }
+      break;
+    case 2:
+      for (let i = 0; i < jogador.col2.length; i++) {
+        let vezes = auxAtualizaPontuacaoColuna(jogador.col2[i], jogador.col2);
+        pontuacao += jogador.col2[i] * vezes;
+      }
+      if (vez == 0) {
+        lamb.pontuacoes.col2 = pontuacao;
+      } else {
+        ratao.pontuacoes.col2 = pontuacao;
+      }
+      break;
+    case 3:
+      for (let i = 0; i < jogador.col3.length; i++) {
+        let vezes = auxAtualizaPontuacaoColuna(jogador.col3[i], jogador.col3);
+        pontuacao += jogador.col3[i] * vezes;
+      }
+      if (vez == 0) {
+        lamb.pontuacoes.col3 = pontuacao;
+      } else {
+        ratao.pontuacoes.col3 = pontuacao;
+      }
+      break;
+  }
+}
 
-  return pont;
+function auxAtualizaPontuacaoColuna(valor, coluna) {
+  let cont = 0;
+  for (let i = 0; i < coluna.length; i++) {
+    if (coluna[i] == valor) {
+      cont++;
+    }
+  }
+  return cont;
 }
 
 // Função de testar se podemos colocar na coluna
