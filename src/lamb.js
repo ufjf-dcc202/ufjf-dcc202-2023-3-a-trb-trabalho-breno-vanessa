@@ -1,8 +1,3 @@
-import {
-  jogarDado,
-  colocaDadoNaColuna,
-  atualizaPontuacaoColuna,
-} from "./funcoesPadroes.js";
 
 let lamb = {
   colunas: {
