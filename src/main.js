@@ -48,6 +48,16 @@ const sortC = document.querySelector("#sorteadorC");
 const ptR = document.querySelector("#pontuacaoR");
 const ptC = document.querySelector("#pontuacaoC");
 
+export function atualizaPontuacaoGeral(){
+  let caminho = cordeiro.pontuacoes
+  cordeiro.pontuacaoTotal = caminho.col1 + caminho.col2 + caminho.col3
+  ptC.innerHTML = cordeiro.pontuacaoTotal
+
+  let caminhoR = rato.pontuacoes
+  rato.pontuacaoTotal = caminhoR.col1 + caminhoR.col2 + caminhoR.col3
+  ptR.innerHTML = rato.pontuacaoTotal
+}
+
 const mensage = document.querySelector("#inicio");
 
 let dadoC, dadoR;
