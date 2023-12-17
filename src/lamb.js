@@ -11,9 +11,9 @@ let lamb = {
     col3: [],
   },
   pontuacoes: {
-    pont1: [],
-    pont2: [],
-    pont3: [],
+    pont1: 0,
+    pont2: 0,
+    pont3: 0,
   },
   pontuacaoTotal: 0,
 };
