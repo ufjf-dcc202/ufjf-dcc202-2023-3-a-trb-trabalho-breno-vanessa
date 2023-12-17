@@ -7,7 +7,7 @@ import {
   finalizaJogo,
 } from "./funcoesPadroes.js";
 
-import { getLamb, atualizaColunaC } from "./lamb.js";
+import { getLamb, atualizaColunaC, atualizaPontoColunaC } from "./lamb.js";
 
 import { getRatao, escolheColunaAleatoria, atualizaColunaR } from "./ratao.js";
 
@@ -69,12 +69,13 @@ col3C.addEventListener("click", () => jogador(3));
 function jogador(coluna) {
   colocaDadoNaColuna(coluna, dadoC, 0);
   atualizaColunaC();
-  let pont = atualizaPontuacaoColuna();
-  console.log(cordeiro.colunas.col2);
+  atualizaPontuacaoColuna(coluna, 0);
+  atualizaPontoColunaC(coluna);
+  console.log(cordeiro.pontuacoes.col2);
 }
 
 function inimigo() {
-  dadoR = jogarDado()
+  dadoR = jogarDado();
   colocaDadoNaColuna(coluna, dadoC, 1);
 }
 
