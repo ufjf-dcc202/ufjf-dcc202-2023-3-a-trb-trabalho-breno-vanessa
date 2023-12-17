@@ -125,16 +125,9 @@ main {
   font-size: 30px;
 }
 
-/* .coluna div {
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 .pontuacoes {
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 50%;
   justify-content: space-between;
 }
