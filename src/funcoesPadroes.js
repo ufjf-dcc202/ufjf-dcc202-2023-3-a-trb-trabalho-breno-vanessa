@@ -11,11 +11,31 @@ export function jogarDado() {
   return dado;
 }
 
-// função que vê se o adversário tem algum dado igual na mesma coluna
-export function confereColunaAdversaria(dado, colAdversaria) {
-  for (let i = colAdversaria.length; i > -1 ; i--) {
-    if (colAdversaria[i] == dado) {
-      colAdversaria.splice(i, 1);
+// Função de testar se podemos colocar na coluna
+export function colocaDadoNaColuna(coluna, dado, jogador) {
+  if (jogador == 0) {
+    if (coluna == 1 && lamb.colunas.col1.length < 3) {
+      lamb.colunas.col1.push(dado);
+      return true;
+    } else if (coluna == 2 && lamb.colunas.col2.length < 3) {
+      lamb.colunas.col2.push(dado);
+      return true;
+    } else if (coluna == 3 && lamb.colunas.col3.length < 3) {
+      lamb.colunas.col3.push(dado);
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    if (coluna == 1 && ratao.colunas.col1.length < 3) {
+      ratao.colunas.col1.push(dado);
+    } else if (coluna == 2 && ratao.colunas.col2.length < 3) {
+      ratao.colunas.col2.push(dado);
+    } else if (coluna == 3 && ratao.colunas.col3.length < 3) {
+      ratao.colunas.col3.push(dado);
+    } else {
+      coluna = escolheColunaAleatoria();
+      colocaDadoNaColuna(coluna, dado, jogador);
     }
   }
 }
@@ -77,33 +97,12 @@ function auxAtualizaPontuacaoColuna(valor, coluna) {
   return cont;
 }
 
-// Função de testar se podemos colocar na coluna
-export function colocaDadoNaColuna(coluna, dado, jogador) {
-  if (jogador == 0) {
-    if (coluna == 1 && lamb.colunas.col1.length < 3) {
-      lamb.colunas.col1.push(dado);
-      return true;
-    } else if (coluna == 2 && lamb.colunas.col2.length < 3) {
-      lamb.colunas.col2.push(dado);
-      return true;
-    } else if (coluna == 3 && lamb.colunas.col3.length < 3) {
-      lamb.colunas.col3.push(dado);
-      return true;
-    } else {
-      return false;
+// função que vê se o adversário tem algum dado igual na mesma coluna
+export function confereColunaAdversaria(dado, colAdversaria) {
+  for (let i = colAdversaria.length; i > -1 ; i--) {
+    if (colAdversaria[i] == dado) {
+      colAdversaria.splice(i, 1);
     }
-  } else {
-    if (coluna == 1 && ratao.colunas.col1.length < 3) {
-      ratao.colunas.col1.push(dado);
-    } else if (coluna == 2 && ratao.colunas.col2.length < 3) {
-      ratao.colunas.col2.push(dado);
-    } else if (coluna == 3 && ratao.colunas.col3.length < 3) {
-      ratao.colunas.col3.push(dado);
-    } else {
-      coluna = escolheColunaAleatoria();
-      colocaDadoNaColuna(coluna, dado, jogador);
-    }
-    return coluna;
   }
 }
 
