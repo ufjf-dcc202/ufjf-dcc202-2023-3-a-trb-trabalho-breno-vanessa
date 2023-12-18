@@ -30,7 +30,6 @@ export function atualizaPontuacaoColuna(col, vez) {
   } else {
     jogador = ratao.colunas;
   }
-  //FIXME: verificar se não confunde coluna com pontuação e no final atualizar pontuação total
   switch (col) {
     case 1:
       for (let i = 0; i < jogador.col1.length; i++) {
@@ -66,7 +65,6 @@ export function atualizaPontuacaoColuna(col, vez) {
       }
       break;
   }
-  // lamb.pontuacaoTotal = lamb.pontuacoes.pont1 + lamb.pontuacoes.pont2 + lamb.pontuacoes.pont3;
 }
 
 function auxAtualizaPontuacaoColuna(valor, coluna) {
