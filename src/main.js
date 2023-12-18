@@ -4,7 +4,6 @@ import {
   atualizaPontuacaoColuna,
   colocaDadoNaColuna,
   acabouJogo,
-  finalizaJogo,
 } from "./funcoesPadroes.js";
 
 import {
@@ -38,19 +37,21 @@ const col3C = document.querySelector("#col3C");
 const sortR = document.querySelector("#sorteadorR");
 const sortC = document.querySelector("#sorteadorC");
 
-const mensage = document.querySelector("#inicio");
+const mensagemInicio = document.querySelector("#inicio");
+
+const mensagemFinal = document.querySelector("#resultado");
 
 let dadoC, dadoR;
 let coluna;
 
-mensage.addEventListener("click", () => rolarDado(sortC));
+mensagemInicio.addEventListener("click", () => rolarDado(sortC));
 
 function rolarDado(sorteador) {
   jogocomecou = true;
   console.log("Essa porra tá funcionando");
   dadoC = jogarDado();
   sorteador.innerHTML = dadoC;
-  mensage.remove();
+  mensagemInicio.remove();
 }
 
 col1C.addEventListener("click", () => jogador(1));
@@ -90,10 +91,10 @@ function jogador(coluna) {
 
   if (acabouJogo()) {
     finalizaJogo();
+  } else {
+    // Chama a jogada do Rato
+    inimigo();
   }
-
-  // Chama a jogada do Rato
-  inimigo();
 }
 
 function inimigo() {
@@ -147,3 +148,23 @@ function inimigo() {
 // confere a coluna adversaria
 // vamos ter que fazer if pra ver qual coluna adversária avaliar
 // muda jogador
+
+// função que de fato termina o jogo
+export function finalizaJogo() {
+  col1C.disabled = true;
+  col2C.disabled = true;
+  col3C.disabled = true;
+  sortC.innerHTML = "";
+  sortR.innerHTML = "";
+
+  let resultado;
+  if (rato.pontuacaoTotal > cordeiro.pontuacaoTotal) {
+    resultado = "O Rato venceu!";
+  } else if (rato.pontuacaoTotal < cordeiro.pontuacaoTotal) {
+    resultado = "O Cordeiro venceu!";
+  } else {
+    resultado = "Houve um empate";
+  }
+
+  mensagemFinal.innerHTML = resultado;
+}
