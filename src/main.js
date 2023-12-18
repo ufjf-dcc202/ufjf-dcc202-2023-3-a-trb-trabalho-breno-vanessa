@@ -59,6 +59,9 @@ col3C.addEventListener("click", () => jogador(3));
 
 function jogador(coluna) {
   if (!jogocomecou) return;
+  col1C.disabled = true;
+  col2C.disabled = true;
+  col3C.disabled = true;
   // Fazer a jogada do carneiro
   colocaDadoNaColuna(coluna, dadoC, 0);
   atualizaColunaC();
@@ -66,20 +69,28 @@ function jogador(coluna) {
   mostraPontoColunaC(coluna);
   atualizaPontuacaoGeralC();
 
-  // Conferir e atualizar o tabuleiro do Rato
-  switch (coluna) {
-    case 1:
-      confereColunaAdversaria(dadoC, rato.colunas.col1);
-      break;
-    case 2:
-      confereColunaAdversaria(dadoC, rato.colunas.col2);
-      break;
-    case 3:
-      confereColunaAdversaria(dadoC, rato.colunas.col3);
-      break;
+  setTimeout(function () {
+    // Conferir e atualizar o tabuleiro do Rato
+    switch (coluna) {
+      case 1:
+        confereColunaAdversaria(dadoC, rato.colunas.col1);
+        break;
+      case 2:
+        confereColunaAdversaria(dadoC, rato.colunas.col2);
+        break;
+      case 3:
+        confereColunaAdversaria(dadoC, rato.colunas.col3);
+        break;
+    }
+    atualizaColunaR();
+    atualizaPontuacaoColuna(coluna, 1);
+    mostraPontoColunaR(coluna);
+    atualizaPontuacaoGeralR();
+  }, 1000);
+
+  if (acabouJogo()) {
+    finalizaJogo();
   }
-  mostraPontoColunaR(coluna);
-  atualizaPontuacaoGeralR();
 
   // Chama a jogada do Rato
   inimigo();
@@ -88,10 +99,45 @@ function jogador(coluna) {
 function inimigo() {
   dadoR = jogarDado();
   sortR.innerHTML = dadoR;
-  colocaDadoNaColuna(coluna, dadoC, 1);
-  //FIXME:atualizar o tabuleiro do inimigo
-  dadoC = jogarDado();
-  sortC.innerHTML = dadoC;
+  setTimeout(function () {
+    // Faz a jogada do rato
+    coluna = escolheColunaAleatoria();
+    colocaDadoNaColuna(coluna, dadoR, 1);
+    atualizaColunaR();
+    atualizaPontuacaoColuna(coluna, 1);
+    mostraPontoColunaR(coluna);
+    atualizaPontuacaoGeralR();
+
+    setTimeout(function () {
+      // Conferir e atualizar o tabuleiro do Rato
+      switch (coluna) {
+        case 1:
+          confereColunaAdversaria(dadoR, cordeiro.colunas.col1);
+          break;
+        case 2:
+          confereColunaAdversaria(dadoR, cordeiro.colunas.col2);
+          break;
+        case 3:
+          confereColunaAdversaria(dadoR, cordeiro.colunas.col3);
+          break;
+      }
+      atualizaColunaC();
+      atualizaPontuacaoColuna(coluna, 0);
+      mostraPontoColunaC(coluna);
+      atualizaPontuacaoGeralC();
+    }, 1000);
+
+    if (acabouJogo()) {
+      finalizaJogo();
+    }
+
+    // joga o dado do cordeiro
+    dadoC = jogarDado();
+    sortC.innerHTML = dadoC;
+    col1C.disabled = false;
+    col2C.disabled = false;
+    col3C.disabled = false;
+  }, 1000);
 }
 
 // jogar o dado
