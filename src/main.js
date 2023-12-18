@@ -21,7 +21,7 @@ import {
   mostraPontoColunaR,
 } from "./ratao.js";
 
-let cordeiro = getLamb();
+let carneiro = getLamb();
 let rato = getRatao();
 let jogocomecou = false;
 
@@ -107,13 +107,13 @@ function inimigo() {
       // Conferir e atualizar o tabuleiro do Rato
       switch (coluna) {
         case 1:
-          confereColunaAdversaria(dadoR, cordeiro.colunas.col1);
+          confereColunaAdversaria(dadoR, carneiro.colunas.col1);
           break;
         case 2:
-          confereColunaAdversaria(dadoR, cordeiro.colunas.col2);
+          confereColunaAdversaria(dadoR, carneiro.colunas.col2);
           break;
         case 3:
-          confereColunaAdversaria(dadoR, cordeiro.colunas.col3);
+          confereColunaAdversaria(dadoR, carneiro.colunas.col3);
           break;
       }
       atualizaColunaC();
@@ -126,7 +126,7 @@ function inimigo() {
       finalizaJogo();
     }
 
-    // joga o dado do cordeiro
+    // joga o dado do carneiro
     dadoC = jogarDado();
     sortC.innerHTML = dadoC;
     col1C.disabled = false;
@@ -144,10 +144,10 @@ export function finalizaJogo() {
   sortR.innerHTML = "";
 
   let resultado;
-  if (rato.pontuacaoTotal > cordeiro.pontuacaoTotal) {
+  if (rato.pontuacaoTotal > carneiro.pontuacaoTotal) {
     resultado = "O Rato venceu!";
-  } else if (rato.pontuacaoTotal < cordeiro.pontuacaoTotal) {
-    resultado = "O Cordeiro venceu!";
+  } else if (rato.pontuacaoTotal < carneiro.pontuacaoTotal) {
+    resultado = "O Carneiro venceu!";
   } else {
     resultado = "Houve um empate";
   }
