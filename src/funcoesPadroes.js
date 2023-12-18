@@ -40,9 +40,9 @@ export function atualizaPontuacaoColuna(col, vez) {
         pontuacao += jogador.col1[i] * vezes;
       }
       if (vez == 0) {
-        lamb.pontuacoes.col1 = pontuacao;
+        lamb.pontuacoes.pont1 = pontuacao;
       } else {
-        ratao.pontuacoes.col1 = pontuacao;
+        ratao.pontuacoes.pont1 = pontuacao;
       }
       break;
     case 2:
@@ -51,9 +51,9 @@ export function atualizaPontuacaoColuna(col, vez) {
         pontuacao += jogador.col2[i] * vezes;
       }
       if (vez == 0) {
-        lamb.pontuacoes.col2 = pontuacao;
+        lamb.pontuacoes.pont2 = pontuacao;
       } else {
-        ratao.pontuacoes.col2 = pontuacao;
+        ratao.pontuacoes.pont2 = pontuacao;
       }
       break;
     case 3:
@@ -62,13 +62,13 @@ export function atualizaPontuacaoColuna(col, vez) {
         pontuacao += jogador.col3[i] * vezes;
       }
       if (vez == 0) {
-        lamb.pontuacoes.col3 = pontuacao;
+        lamb.pontuacoes.pont3 = pontuacao;
       } else {
-        ratao.pontuacoes.col3 = pontuacao;
+        ratao.pontuacoes.pont3 = pontuacao;
       }
       break;
   }
-  lamb.pontuacaoTotal = lamb.pontuacoes.pont1 + lamb.pontuacoes.pont2 + lamb.pontuacoes.pont3;
+  // lamb.pontuacaoTotal = lamb.pontuacoes.pont1 + lamb.pontuacoes.pont2 + lamb.pontuacoes.pont3;
 }
 
 function auxAtualizaPontuacaoColuna(valor, coluna) {

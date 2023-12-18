@@ -23,6 +23,8 @@ const pont1R = document.querySelector("#pont1R");
 const pont2R = document.querySelector("#pont2R");
 const pont3R = document.querySelector("#pont3R");
 
+const ptR = document.querySelector("#pontuacaoR");
+
 export function getRatao() {
   return ratao;
 }
@@ -51,13 +53,28 @@ export function escolheColunaAleatoria() {
 export function atualizaPontoColunaR(coluna) {
   switch (coluna) {
     case 1:
-      pont1R.innerHTML = ratao.pontuacoes.col1;
+      pont1R.innerHTML = ratao.pontuacoes.pont1;
       break;
     case 2:
-      pont2R.innerHTML = ratao.pontuacoes.col2;
+      pont2R.innerHTML = ratao.pontuacoes.pont2;
       break;
     case 3:
-      pont3R.innerHTML = ratao.pontuacoes.col3;
+      pont3R.innerHTML = ratao.pontuacoes.pont3;
       break;
   }
+}
+
+export function atualizaPontuacaoGeralR() {
+  caminho = ratao.pontuacoes;
+  ratao.pontuacaoTotal = 0;
+  if (caminho.pont1 != 0) {
+    ratao.pontuacaoTotal += caminho.pont1;
+  }
+  if (caminho.pont2 != 0) {
+    ratao.pontuacaoTotal += caminho.pont2;
+  }
+  if (caminho.pont3 != 0) {
+    ratao.pontuacaoTotal += caminho.pont3;
+  }
+  ptR.innerHTML = ratao.pontuacaoTotal;
 }

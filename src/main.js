@@ -7,13 +7,13 @@ import {
   finalizaJogo,
 } from "./funcoesPadroes.js";
 
-import { getLamb, atualizaColunaC, atualizaPontoColunaC } from "./lamb.js";
+import { getLamb, atualizaColunaC, atualizaPontoColunaC, atualizaPontuacaoGeralC } from "./lamb.js";
 
-import { getRatao, escolheColunaAleatoria, atualizaColunaR } from "./ratao.js";
+import { getRatao, escolheColunaAleatoria, atualizaColunaR, atualizaPontuacaoGeralR } from "./ratao.js";
 
 let cordeiro = getLamb();
 let rato = getRatao();
-let vez = 0; // 0 para Carneiro e 1 para Ratao
+// let vez = 0; // 0 para Carneiro e 1 para Ratao
 let jogocomecou = false;
 
 const col1C = document.querySelector("#col1C");
@@ -26,19 +26,6 @@ const col3C = document.querySelector("#col3C");
 
 const sortR = document.querySelector("#sorteadorR");
 const sortC = document.querySelector("#sorteadorC");
-
-const ptR = document.querySelector("#pontuacaoR");
-const ptC = document.querySelector("#pontuacaoC");
-
-export function atualizaPontuacaoGeral(){
-  let caminho = cordeiro.pontuacoes
-  cordeiro.pontuacaoTotal = caminho.pont1 + caminho.pont2 + caminho.pont3
-  ptC.innerHTML = cordeiro.pontuacaoTotal
-
-  let caminhoR = rato.pontuacoes
-  rato.pontuacaoTotal = caminhoR.col1 + caminhoR.col2 + caminhoR.col3
-  ptR.innerHTML = rato.pontuacaoTotal
-}
 
 const mensage = document.querySelector("#inicio");
 
@@ -65,7 +52,7 @@ function jogador(coluna) {
   atualizaColunaC();
   atualizaPontuacaoColuna(coluna, 0);
   atualizaPontoColunaC(coluna);
-  atualizaPontuacaoGeral();
+  atualizaPontuacaoGeralC();
   inimigo();
 }
 
@@ -80,5 +67,5 @@ function inimigo() {
 // atualizar coluna
 // atualiza pontuacao coluna e geral
 // confere a coluna adversaria
-  // vamos ter que fazer if pra ver qual coluna adversária avaliar
+// vamos ter que fazer if pra ver qual coluna adversária avaliar
 // muda jogador
