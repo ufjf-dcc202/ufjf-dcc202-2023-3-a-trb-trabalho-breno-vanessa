@@ -13,13 +13,11 @@ export function jogarDado() {
 
 // função que vê se o adversário tem algum dado igual na mesma coluna
 export function confereColunaAdversaria(dado, colAdversaria) {
-  for (let i = 0; i < colAdversaria.length; i++) {
+  for (let i = colAdversaria.length; i > -1 ; i--) {
     if (colAdversaria[i] == dado) {
       colAdversaria.splice(i, 1);
     }
   }
-
-  return colAdversaria;
 }
 
 //função para calcular a pontuação de cada coluna
@@ -128,4 +126,12 @@ export function acabouJogo() {
 }
 
 // função que de fato termina o jogo
-export function finalizaJogo(ganhador) {}
+export function finalizaJogo() {
+  if(ratao.pontuacaoTotal > lamb.pontuacaoTotal){
+
+  } else if(ratao.pontuacaoTotal < lamb.pontuacaoTotal){
+
+  } else {
+    
+  }
+}
