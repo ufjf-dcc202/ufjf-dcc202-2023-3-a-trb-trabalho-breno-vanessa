@@ -65,7 +65,7 @@ export function mostraPontoColunaR(coluna) {
 }
 
 export function atualizaPontuacaoGeralR() {
-  caminho = ratao.pontuacoes;
+  let caminho = ratao.pontuacoes;
   ratao.pontuacaoTotal = 0;
   if (caminho.pont1 != 0) {
     ratao.pontuacaoTotal += caminho.pont1;
