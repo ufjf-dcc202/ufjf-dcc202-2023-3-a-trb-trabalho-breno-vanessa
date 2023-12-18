@@ -124,14 +124,3 @@ export function acabouJogo() {
     return false;
   }
 }
-
-// função que de fato termina o jogo
-export function finalizaJogo() {
-  if(ratao.pontuacaoTotal > lamb.pontuacaoTotal){
-
-  } else if(ratao.pontuacaoTotal < lamb.pontuacaoTotal){
-
-  } else {
-    
-  }
-}
