@@ -42,7 +42,7 @@ export function atualizaColunaC() {
   }
 }
 
-export function atualizaPontoColunaC(coluna) {
+export function mostraPontoColunaC(coluna) {
   switch (coluna) {
     case 1:
       pont1C.innerHTML = lamb.pontuacoes.pont1;

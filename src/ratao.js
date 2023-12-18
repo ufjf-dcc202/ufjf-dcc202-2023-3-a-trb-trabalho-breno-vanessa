@@ -50,7 +50,7 @@ export function escolheColunaAleatoria() {
   return coluna;
 }
 
-export function atualizaPontoColunaR(coluna) {
+export function mostraPontoColunaR(coluna) {
   switch (coluna) {
     case 1:
       pont1R.innerHTML = ratao.pontuacoes.pont1;
