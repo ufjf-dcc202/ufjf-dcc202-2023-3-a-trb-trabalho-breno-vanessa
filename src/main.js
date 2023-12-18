@@ -7,9 +7,20 @@ import {
   finalizaJogo,
 } from "./funcoesPadroes.js";
 
-import { getLamb, atualizaColunaC, atualizaPontoColunaC, atualizaPontuacaoGeralC } from "./lamb.js";
+import {
+  getLamb,
+  atualizaColunaC,
+  mostraPontoColunaC,
+  atualizaPontuacaoGeralC,
+} from "./lamb.js";
 
-import { getRatao, escolheColunaAleatoria, atualizaColunaR, atualizaPontuacaoGeralR } from "./ratao.js";
+import {
+  getRatao,
+  escolheColunaAleatoria,
+  atualizaColunaR,
+  atualizaPontuacaoGeralR,
+  mostraPontoColunaR,
+} from "./ratao.js";
 
 let cordeiro = getLamb();
 let rato = getRatao();
@@ -48,18 +59,39 @@ col3C.addEventListener("click", () => jogador(3));
 
 function jogador(coluna) {
   if (!jogocomecou) return;
+  // Fazer a jogada do carneiro
   colocaDadoNaColuna(coluna, dadoC, 0);
   atualizaColunaC();
   atualizaPontuacaoColuna(coluna, 0);
-  atualizaPontoColunaC(coluna);
+  mostraPontoColunaC(coluna);
   atualizaPontuacaoGeralC();
+
+  // Conferir e atualizar o tabuleiro do Rato
+  switch (coluna) {
+    case 1:
+      confereColunaAdversaria(dadoC, rato.colunas.col1);
+      break;
+    case 2:
+      confereColunaAdversaria(dadoC, rato.colunas.col2);
+      break;
+    case 3:
+      confereColunaAdversaria(dadoC, rato.colunas.col3);
+      break;
+  }
+  mostraPontoColunaR(coluna);
+  atualizaPontuacaoGeralR();
+
+  // Chama a jogada do Rato
   inimigo();
 }
 
 function inimigo() {
   dadoR = jogarDado();
+  sortR.innerHTML = dadoR;
   colocaDadoNaColuna(coluna, dadoC, 1);
   //FIXME:atualizar o tabuleiro do inimigo
+  dadoC = jogarDado();
+  sortC.innerHTML = dadoC;
 }
 
 // jogar o dado
