@@ -1,4 +1,3 @@
-
 let ratao, coluna;
 
 ratao = {
@@ -24,6 +23,50 @@ const pont2R = document.querySelector("#pont2R");
 const pont3R = document.querySelector("#pont3R");
 
 const ptR = document.querySelector("#pontuacaoR");
+
+export function ratoJogar() {
+  dadoR = jogarDado();
+  sortR.innerHTML = dadoR;
+  setTimeout(function () {
+    // Faz a jogada do rato
+    coluna = escolheColunaAleatoria();
+    colocaDadoNaColuna(coluna, dadoR, 1);
+    atualizaColunaR();
+    atualizaPontuacaoColuna(coluna, 1);
+    mostraPontoColunaR(coluna);
+    atualizaPontuacaoGeralR();
+
+    setTimeout(function () {
+      // Conferir e atualizar o tabuleiro do Rato
+      switch (coluna) {
+        case 1:
+          confereColunaAdversaria(dadoR, carneiro.colunas.col1);
+          break;
+        case 2:
+          confereColunaAdversaria(dadoR, carneiro.colunas.col2);
+          break;
+        case 3:
+          confereColunaAdversaria(dadoR, carneiro.colunas.col3);
+          break;
+      }
+      atualizaColunaC();
+      atualizaPontuacaoColuna(coluna, 0);
+      mostraPontoColunaC(coluna);
+      atualizaPontuacaoGeralC();
+    }, 1000);
+
+    if (acabouJogo()) {
+      finalizaJogo();
+    }
+
+    // joga o dado do carneiro
+    dadoC = jogarDado();
+    sortC.innerHTML = dadoC;
+    col1C.disabled = false;
+    col2C.disabled = false;
+    col3C.disabled = false;
+  }, 1000);
+}
 
 export function getRatao() {
   return ratao;
