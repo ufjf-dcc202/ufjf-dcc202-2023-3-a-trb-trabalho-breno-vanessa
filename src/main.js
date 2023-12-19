@@ -48,11 +48,11 @@ function rolarDado(sorteador) {
   mensagemInicio.remove();
 }
 
-col1C.addEventListener("click", () => jogador(1));
-col2C.addEventListener("click", () => jogador(2));
-col3C.addEventListener("click", () => jogador(3));
+col1C.addEventListener("click", () => carneiroJogar(1));
+col2C.addEventListener("click", () => carneiroJogar(2));
+col3C.addEventListener("click", () => carneiroJogar(3));
 
-function jogador(coluna) {
+function carneiroJogar(coluna) {
   if (!jogocomecou) return;
   col1C.disabled = true;
   col2C.disabled = true;
@@ -94,12 +94,12 @@ function jogador(coluna) {
       finalizaJogo();
     } else {
       // Chama a jogada do Rato
-      inimigo();
+      ratoJogar();
     }
   }
 }
 
-function inimigo() {
+function ratoJogar() {
   dadoR = jogarDado();
   sortR.innerHTML = dadoR;
   setTimeout(function () {
