@@ -1,4 +1,3 @@
-
 let lamb = {
   colunas: {
     col1: [],
@@ -22,6 +21,54 @@ const pont2C = document.querySelector("#pont2C");
 const pont3C = document.querySelector("#pont3C");
 
 const ptC = document.querySelector("#pontuacaoC");
+
+export function carneiroJogar(coluna) {
+  if (!jogocomecou) return;
+  col1C.disabled = true;
+  col2C.disabled = true;
+  col3C.disabled = true;
+  // Fazer a jogada do carneiro
+  if (!colocaDadoNaColuna(coluna, dadoC, 0)) {
+    mensagemFinal.innerHTML =
+      "Você não pode escolher essa coluna, escolha outra.";
+    col1C.disabled = false;
+    col2C.disabled = false;
+    col3C.disabled = false;
+  } else {
+    mensagemFinal.innerHTML = ""
+    atualizaColunaC();
+    atualizaPontuacaoColuna(coluna, 0);
+    mostraPontoColunaC(coluna);
+    atualizaPontuacaoGeralC();
+
+    setTimeout(function () {
+      // Conferir e atualizar o tabuleiro do Rato
+      switch (coluna) {
+        case 1:
+          confereColunaAdversaria(dadoC, rato.colunas.col1);
+          break;
+        case 2:
+          confereColunaAdversaria(dadoC, rato.colunas.col2);
+          break;
+        case 3:
+          confereColunaAdversaria(dadoC, rato.colunas.col3);
+          break;
+      }
+      atualizaColunaR();
+      atualizaPontuacaoColuna(coluna, 1);
+      mostraPontoColunaR(coluna);
+      atualizaPontuacaoGeralR();
+    }, 1000);
+
+    if (acabouJogo()) {
+      finalizaJogo();
+    } else {
+      // Chama a jogada do Rato
+      ratoJogar();
+    }
+  }
+}
+
 
 export function getLamb() {
   return lamb;
