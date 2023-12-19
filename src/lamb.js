@@ -13,7 +13,7 @@ let lamb = {
   pontuacaoTotal: 0,
 };
 
-// Seleciona as 3 colunas do rato vindas do html
+// Seleciona as 3 colunas do carneiro vindas do html
 const col1C = document.querySelector("#col1C");
 const col2C = document.querySelector("#col2C");
 const col3C = document.querySelector("#col3C");
@@ -26,7 +26,7 @@ const pont3C = document.querySelector("#pont3C");
 // Seleciona o espaço para colocarmos a pontuação final vindo do html
 const ptC = document.querySelector("#pontuacaoC");
 
-// Nessa função damos acesso direto ao objeto ratao à todos os arquivos que importarem essa função
+// Nessa função damos acesso direto ao objeto carneiro à todos os arquivos que importarem essa função
 export function getLamb() {
   // optamos por enviarmos o objeto e não um structuredClone para que a atualização do mesmo fosse mais fácil
   return lamb;
