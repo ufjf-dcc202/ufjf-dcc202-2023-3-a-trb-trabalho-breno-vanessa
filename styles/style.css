@@ -127,6 +127,11 @@ main {
   justify-content: space-between;
 }
 
+.vitoria{
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .inicio-fim {
   border: 1px solid gray;
   font-weight: 800;
