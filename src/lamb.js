@@ -59,13 +59,13 @@ export function mostraPontoColunaC(coluna) {
 export function atualizaPontuacaoGeralC() {
   let caminho = lamb.pontuacoes;
   lamb.pontuacaoTotal = 0;
-  if (caminho.pont1 != 0) {
+  if (caminho.pont1 !== 0) {
     lamb.pontuacaoTotal += caminho.pont1;
   }
-  if (caminho.pont2 != 0) {
+  if (caminho.pont2 !== 0) {
     lamb.pontuacaoTotal += caminho.pont2;
   }
-  if (caminho.pont3 != 0) {
+  if (caminho.pont3 !== 0) {
     lamb.pontuacaoTotal += caminho.pont3;
   }
   ptC.innerHTML = lamb.pontuacaoTotal;

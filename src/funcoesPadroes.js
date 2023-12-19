@@ -15,15 +15,15 @@ export function jogarDado() {
 // Função de testar se podemos colocar na coluna.
 // Usa o parâmetro coluna para saber qual coluna foi escolhida e o parâmetro jogador para saber em qual tabuleiro colocar
 export function colocaDadoNaColuna(coluna, dado, jogador) {
-  if (jogador == 0) {
+  if (jogador === 0) {
     // para o cordeiro, caso ele não tenha escolhido uma coluna válida, ele retorna falso no fim da função
-    if (coluna == 1 && lamb.colunas.col1.length < 3) {
+    if (coluna === 1 && lamb.colunas.col1.length < 3) {
       lamb.colunas.col1.push(dado);
       return true;
-    } else if (coluna == 2 && lamb.colunas.col2.length < 3) {
+    } else if (coluna === 2 && lamb.colunas.col2.length < 3) {
       lamb.colunas.col2.push(dado);
       return true;
-    } else if (coluna == 3 && lamb.colunas.col3.length < 3) {
+    } else if (coluna === 3 && lamb.colunas.col3.length < 3) {
       lamb.colunas.col3.push(dado);
       return true;
     } else {
@@ -31,11 +31,11 @@ export function colocaDadoNaColuna(coluna, dado, jogador) {
     }
   } else {
     // para o rato, ele usa o conceito de recursividade (uma função chamar a ela mesma) para que se escolha outra coluna
-    if (coluna == 1 && ratao.colunas.col1.length < 3) {
+    if (coluna === 1 && ratao.colunas.col1.length < 3) {
       ratao.colunas.col1.push(dado);
-    } else if (coluna == 2 && ratao.colunas.col2.length < 3) {
+    } else if (coluna === 2 && ratao.colunas.col2.length < 3) {
       ratao.colunas.col2.push(dado);
-    } else if (coluna == 3 && ratao.colunas.col3.length < 3) {
+    } else if (coluna === 3 && ratao.colunas.col3.length < 3) {
       ratao.colunas.col3.push(dado);
     } else {
       coluna = escolheColunaAleatoria();
@@ -50,7 +50,7 @@ export function atualizaPontuacaoColuna(col, vez) {
 
   // testamos quem é o jogador
   let jogador;
-  if (vez == 0) {
+  if (vez === 0) {
     jogador = lamb.colunas;
   } else {
     jogador = ratao.colunas;
@@ -65,7 +65,7 @@ export function atualizaPontuacaoColuna(col, vez) {
         let vezes = auxAtualizaPontuacaoColuna(jogador.col1[i], jogador.col1);
         pontuacao += jogador.col1[i] * vezes;
       }
-      if (vez == 0) {
+      if (vez === 0) {
         lamb.pontuacoes.pont1 = pontuacao;
       } else {
         ratao.pontuacoes.pont1 = pontuacao;
@@ -76,7 +76,7 @@ export function atualizaPontuacaoColuna(col, vez) {
         let vezes = auxAtualizaPontuacaoColuna(jogador.col2[i], jogador.col2);
         pontuacao += jogador.col2[i] * vezes;
       }
-      if (vez == 0) {
+      if (vez === 0) {
         lamb.pontuacoes.pont2 = pontuacao;
       } else {
         ratao.pontuacoes.pont2 = pontuacao;
@@ -87,7 +87,7 @@ export function atualizaPontuacaoColuna(col, vez) {
         let vezes = auxAtualizaPontuacaoColuna(jogador.col3[i], jogador.col3);
         pontuacao += jogador.col3[i] * vezes;
       }
-      if (vez == 0) {
+      if (vez === 0) {
         lamb.pontuacoes.pont3 = pontuacao;
       } else {
         ratao.pontuacoes.pont3 = pontuacao;
@@ -99,7 +99,7 @@ export function atualizaPontuacaoColuna(col, vez) {
 function auxAtualizaPontuacaoColuna(valor, coluna) {
   let cont = 0;
   for (let i = 0; i < coluna.length; i++) {
-    if (coluna[i] == valor) {
+    if (coluna[i] === valor) {
       cont++;
     }
   }
@@ -109,7 +109,7 @@ function auxAtualizaPontuacaoColuna(valor, coluna) {
 // função que vê se o adversário tem algum dado igual na mesma coluna e retira esse dado da coluna adversária
 export function confereColunaAdversaria(dado, colAdversaria) {
   for (let i = colAdversaria.length; i > -1; i--) {
-    if (colAdversaria[i] == dado) {
+    if (colAdversaria[i] === dado) {
       colAdversaria.splice(i, 1);
     }
   }
@@ -118,12 +118,12 @@ export function confereColunaAdversaria(dado, colAdversaria) {
 // função que diz se o jogo acabou, ou seja, se todas as colunas de pelo menos um dos jogadores está completa
 export function acabouJogo() {
   if (
-    (lamb.colunas.col1.length == 3 &&
-      lamb.colunas.col2.length == 3 &&
-      lamb.colunas.col3.length == 3) ||
-    (ratao.colunas.col1.length == 3 &&
-      ratao.colunas.col2.length == 3 &&
-      ratao.colunas.col3.length == 3)
+    (lamb.colunas.col1.length === 3 &&
+      lamb.colunas.col2.length === 3 &&
+      lamb.colunas.col3.length === 3) ||
+    (ratao.colunas.col1.length === 3 &&
+      ratao.colunas.col2.length === 3 &&
+      ratao.colunas.col3.length === 3)
   ) {
     return true;
   } else {
