@@ -1,3 +1,4 @@
+// falta adicionar comentários
 let ratao, coluna;
 
 ratao = {

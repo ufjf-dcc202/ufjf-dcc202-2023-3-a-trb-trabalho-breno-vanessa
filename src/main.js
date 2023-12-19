@@ -1,3 +1,4 @@
+// falta adicionar comentários
 import {
   jogarDado,
   confereColunaAdversaria,
