@@ -110,7 +110,7 @@ function carneiroJogar(coluna) {
           confereColunaAdversaria(dadoC, rato.colunas.col3);
           break;
       }
-      // Depois disso fazemos todas as atulizações necessárias para o rato, atualizando a coluna e todas as pontuações
+      // Depois disso fazemos todas as atualizações necessárias para o rato, atualizando a coluna e todas as pontuações
       atualizaColunaR();
       atualizaPontuacaoColuna(coluna, 1);
       mostraPontoColunaR(coluna);
