@@ -138,7 +138,7 @@ function ratoJogar() {
   setTimeout(function () {
     // fazemos o rato escolher sua coluna e colocamos o dado sorteado na coluna sorteada
     coluna = escolheColunaAleatoria();
-    colocaDadoNaColuna(coluna, dadoR, 1);
+    coluna = colocaDadoNaColuna(coluna, dadoR, 1);
     // atualizamos a coluna no html
     atualizaColunaR();
     // Atualizamos a pontuação da coluna e a mostramos no html

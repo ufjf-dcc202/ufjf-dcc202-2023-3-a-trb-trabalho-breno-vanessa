@@ -41,6 +41,7 @@ export function colocaDadoNaColuna(coluna, dado, jogador) {
       coluna = escolheColunaAleatoria();
       colocaDadoNaColuna(coluna, dado, jogador);
     }
+    return coluna;
   }
 }
 
