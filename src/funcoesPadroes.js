@@ -16,27 +16,16 @@ export function jogarDado() {
 // Usa o parâmetro coluna para saber qual coluna foi escolhida e o parâmetro jogador para saber em qual tabuleiro colocar
 export function colocaDadoNaColuna(coluna, dado, jogador) {
   if (jogador === 0) {
-    // para o cordeiro, caso ele não tenha escolhido uma coluna válida, ele retorna falso no fim da função
-    if (coluna === 1 && lamb.colunas.col1.length < 3) {
-      lamb.colunas.col1.push(dado);
-      return true;
-    } else if (coluna === 2 && lamb.colunas.col2.length < 3) {
-      lamb.colunas.col2.push(dado);
-      return true;
-    } else if (coluna === 3 && lamb.colunas.col3.length < 3) {
-      lamb.colunas.col3.push(dado);
-      return true;
+    if(lamb.colunas["col"+coluna].length < 3){
+      lamb.colunas["col"+coluna].push(dado);
+      return true
     } else {
-      return false;
+      return false
     }
   } else {
     // para o rato, ele usa o conceito de recursividade (uma função chamar a ela mesma) para que se escolha outra coluna
-    if (coluna === 1 && ratao.colunas.col1.length < 3) {
-      ratao.colunas.col1.push(dado);
-    } else if (coluna === 2 && ratao.colunas.col2.length < 3) {
-      ratao.colunas.col2.push(dado);
-    } else if (coluna === 3 && ratao.colunas.col3.length < 3) {
-      ratao.colunas.col3.push(dado);
+    if(ratao.colunas["col"+coluna].length < 3){
+      ratao.colunas["col"+coluna].push(dado);
     } else {
       coluna = escolheColunaAleatoria();
       colocaDadoNaColuna(coluna, dado, jogador);
